@@ -1,0 +1,13 @@
+name: snapface # you probably want to 'snapcraft register <name>'
+version: '0.2'
+summary: Face Recognition using Tensorflow
+description: |
+  Performs classification of face images
+apps:
+  compare:
+    command: usr/bin/python3 $SNAP/usr/lib/python3/dist-packages/src/compare.py
+parts:
+  facenet:
+    plugin: python3
+    source: https://github.com/davidsandberg/facenet.git
+    python-packages: [tensorflow, scipy, scikit-learn, opencv-python]
